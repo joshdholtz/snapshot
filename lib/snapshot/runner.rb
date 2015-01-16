@@ -111,7 +111,7 @@ module Snapshot
         return :retry
       elsif line.include?"Screenshot captured"
         return :screenshot
-      elsif line.include? "Timed out waiting for"
+      elsif line.include? "Instruments wants permission to analyze other processes"
         return :need_permission
       elsif line =~ /.*Error: (.*)/
         raise "UIAutomation Error: #{$1}"
